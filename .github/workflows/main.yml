@@ -1,0 +1,22 @@
+name: Hello World
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  say-hello:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Greet the world
+        run: echo "Hello, GitHub Actions!"
+      
+      - name: Show current date
+        run: date
+      
+      - name: Show runner information
+        run: |
+          echo "Operating System: $RUNNER_OS"
+          echo "Architecture: $RUNNER_ARCH"
